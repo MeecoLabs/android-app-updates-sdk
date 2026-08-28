@@ -12,6 +12,7 @@ import kotlinx.coroutines.withContext
 import java.io.File
 import java.time.Instant
 
+@Suppress("unused")
 class AppUpdateRepository(
     repoDir: File,
     private val repo: Repo,
