@@ -4,11 +4,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.maven.publish)
 }
-
-val namespace = "eu.meecolabs.appupdates"
-val libVersion = "1.0.0"
 
 android {
     namespace = "eu.meecolabs.appupdates"
@@ -70,27 +66,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.kotlinx.coroutines.test)
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                groupId = namespace
-                artifactId = "app-updates"
-                version = libVersion
-
-                afterEvaluate {
-                    from(components["release"])
-                }
-            }
-        }
-
-        repositories {
-            maven {
-                name = "AppUpdatesRepo"
-                url = uri(layout.buildDirectory.dir("repo"))
-            }
-        }
-    }
 }
