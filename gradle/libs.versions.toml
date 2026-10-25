@@ -6,7 +6,7 @@ espressoCore = "3.7.0"
 fdroid = "0.2.0"
 kotlin = "2.4.10"
 kotlinxCoroutinesTest = "1.11.0"
-kotlinxSerialization = "1.11.0"
+kotlinxSerialization = "1.12.0"
 okhttp = "5.5.0"
 
 [libraries]
